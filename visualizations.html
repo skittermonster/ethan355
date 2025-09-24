@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualizations — YOUR NAME</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="vis.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">YOUR NAME</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="visualizations.html" aria-current="page">Visualizations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="section container">
+      <h1>Visualization Portfolio</h1>
+      <p>This page contains two SVG-based works built with JavaScript:</p>
+      <ol>
+        <li><strong>Bar Chart (SVG)</strong> — a simple, responsive data visualization.</li>
+        <li><strong>Creative SVG Art</strong> — generated shapes and animation using JS.</li>
+      </ol>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2>1) SVG Bar Chart</h2>
+        <div id="viz1" class="viz"></div>
+        <details class="code-notes">
+          <summary>How it works</summary>
+          <p>The chart is created by generating SVG rectangles via JavaScript. It scales responsively by reading the container width and using viewBox.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>2) Creative SVG Art</h2>
+        <div id="viz2" class="viz"></div>
+        <details class="code-notes">
+          <summary>How it works</summary>
+          <p>JS creates circles along a spiral path and animates their radius for a soothing motion effect.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> YOUR NAME — SVG experiments.</p>
+    </div>
+  </footer>
+</body>
+</html>
