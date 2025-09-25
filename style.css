@@ -15,9 +15,17 @@
 
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
+
+/* Prevent white overscroll flash */
+html {
+  background: #0b0c10; /* fallback background */
+  overscroll-behavior: none;
+}
+
 body{
   margin: 0; font: 400 1rem/1.65 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--text); background: radial-gradient(1200px 800px at 100% -100px, #1a2236 0%, #0b0c10 45%);
+  overscroll-behavior: none; /* disable bounce */
 }
 
 .container{ width: var(--content); margin-inline: auto; padding-inline: var(--space); }
