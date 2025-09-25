@@ -67,11 +67,44 @@
         messageErr.textContent = '';
       }
 
+      
       if(ok){
-        success.hidden = false;
-        form.reset();
-        setTimeout(() => success.hidden = true, 4000);
+        // Actually send via EmailJS using previous working settings
+        if (window.emailjs && emailjs.send) {
+          // Show a temporary status while sending
+          success.hidden = false;
+          success.textContent = 'Sending...';
+
+          emailjs.send(
+            'service_3t69jop',            // Your EmailJS service ID
+            'template_0sud9sl',           // Your EmailJS template ID
+            {
+              from_name: name.value,
+              to_name: 'Ethan Lum',
+              from_email: email.value,
+              to_email: 'zerbsteve@gmail.com',
+              message: message.value
+            }
+          ).then(() => {
+            success.hidden = false;
+            success.textContent = 'Thank you! I will get back to you as soon as possible.';
+            form.reset();
+            setTimeout(() => success.hidden = true, 5000);
+          }).catch((err) => {
+            console.error(err);
+            success.hidden = false;
+            success.textContent = 'Something went wrong. Please try again.';
+            setTimeout(() => success.hidden = true, 5000);
+          });
+        } else {
+          // Fallback: show fake success if EmailJS is unavailable
+          success.hidden = false;
+          success.textContent = 'Thanks! Your message has been “sent”.';
+          form.reset();
+          setTimeout(() => success.hidden = true, 4000);
+        }
       }
+    
     });
   }
 })();
