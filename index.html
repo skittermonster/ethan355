@@ -1,197 +1,181 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ethan Lum — Personal Website</title>
-  <meta name="description" content="Portfolio website showcasing skills, education, projects, and experience." />
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="main.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Ethan Lum — Personal Website</title>
+<meta content="Portfolio website showcasing skills, education, projects, and experience." name="description"/>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-current="page">ETHAN LUM</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">☰</button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li> 
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="visualizations.html">Visualizations</a></li>
-        <li><a href="resume.pdf" target="_blank">Resume</a></li> 
-      </ul>
-    </nav>
-  </header>
-
-  <main id="content">
-    <section id="hero" class="hero">
-      <div class="hero-inner container">
-        <div class="hero-copy">
-          <h1>Hello, I’m <span class="accent">Ethan Lum</span>.</h1>
-          <p class="lead">SIAT @ SFU undergrad focused on UX/UI, AI, and creative tech — designing simple, thoughtful interfaces.</p>
-          <div class="hero-cta">
-            <a class="btn" href="visualizations.html">See Visualizations</a>
-            <a class="btn btn-secondary" href="#contact">Contact Me</a>
-            <a class="btn" href="resume.pdf" target="_blank">View Resume</a>
-          </div>
-        </div>
-        <div class="hero-photo" aria-hidden="true">
-          <img src="images/me.JPG" alt="Me" />
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section container">
-      <h2>About Me</h2>
-      <p>I'm currently pursuing a Bachelor of Science in Interactive Arts and Technology at Simon Fraser University, 
+<header class="site-header">
+<a aria-current="page" class="brand" href="index.html">ETHAN LUM</a>
+<button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle">☰</button>
+<nav aria-label="Primary" class="site-nav" id="site-nav">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#music">Music</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="visualizations.html">Visualizations</a></li>
+<li><a href="resume.pdf" target="_blank">Resume</a></li>
+</ul>
+</nav>
+</header>
+<main id="content">
+<section class="hero" id="hero">
+<div class="hero-inner container">
+<div class="hero-copy">
+<h1>Hello, I’m <span class="accent">Ethan Lum</span>.</h1>
+<p class="lead">SIAT @ SFU undergrad focused on UX/UI, AI, and creative tech — designing simple, thoughtful interfaces.</p>
+<div class="hero-cta">
+<a class="btn" href="visualizations.html">See Visualizations</a>
+<a class="btn btn-secondary" href="#contact">Contact Me</a>
+<a class="btn" href="resume.pdf" target="_blank">View Resume</a>
+</div>
+</div>
+<div aria-hidden="true" class="hero-photo">
+<img alt="Me" src="images/me.JPG"/>
+</div>
+</div>
+</section>
+<section class="section container" id="about">
+<h2>About Me</h2>
+<p>I'm currently pursuing a Bachelor of Science in Interactive Arts and Technology at Simon Fraser University, 
         specializing in user experience and interface (UX/UI) development, artificial intelligence, and sound design. 
         My passion for music production and innovative audio solutions drives me to blend creativity with cutting-edge technology, 
         delivering immersive experiences and intuitive interfaces. I'm eager to collaborate with forward-thinking companies, 
         contributing my multidisciplinary skill set and creative vision to impactful projects.</p>
-      <ul class="inline-info">
-        <li>Location: Coquitlam / Vancouver, BC</li>
-        <li>Email: <a href="mailto:ela98@sfu.ca">ela98@sfu.ca</a></li>
-        <li>GitHub: <a href="https://github.com/skittermonster">skittermonster</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/ethan-lum-052048275//">Ethan Lum</a></li>
-      </ul>
-    </section>
-
-    <section id="education" class="section section-alt">
-      <div class="container">
-        <h2>Education</h2>
-        <article class="card">
-          <header class="card-header">
-            <h3>Simon Fraser University — Interactive Arts & Technology</h3>
-            <span class="meta">2021-Present</span>
-          </header>
-          <p>Relevant coursework: Web Development, AI, Human-Computer Interaction, Data Visualization, Programming.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills" class="section container">
-      <h2>Skills</h2> 
-      <div class="pill-list" role="list">
-        <span class="pill" role="listitem">HTML5</span>
-        <span class="pill" role="listitem">CSS3</span>
-        <span class="pill" role="listitem">JavaScript</span>
-        <span class="pill" role="listitem">Git & GitHub</span>
-        <span class="pill" role="listitem">Figma</span>
-        <span class="pill" role="listitem">Python</span>
-      </div>
-    </section>
-
-    <section id="projects" class="section container">
-      <h2>Projects</h2>
-      <p class="lead">A few lightweight case studies & experiments — no fluff, just signal.</p>
-      <div class="grid">
-        <article class="card">
-          <header class="card-header">
-            <h3>Portfolio Site</h3>
-            <span class="meta">HTML · CSS · JS</span>
-          </header>
-          <p>This website, built as an assignment, uses semantic HTML, responsive CSS, and vanilla JS.</p>
-        </article>
-        <article class="card">
-          <header class="card-header">
-            <h3>Data Viz Showcase</h3>
-            <span class="meta">SVG · JavaScript</span>
-          </header>
-          <p>Custom SVG visualizations using JavaScript on the <a class="text-link" href="visualizations.html">visualizations page</a>.</p>
-        </article>
-        <article class="card">
-          <header class="card-header">
-            <h3>IAT 460 — LoRAstley</h3>
-            <span class="meta">SDXL LoRA · ComfyUI</span>
-          </header>
-          <p>Custom LoRA trained for SDXL 1.0 to generate 1024×1024 frames in the style of the original “Never Gonna Give You Up” video. Includes training setup, comparisons, challenges, and a demo.</p>
-          <p>
-            <a class="text-link" href="Ethan Lum 460 slides.pdf" target="_blank" rel="noopener">View Slides (PDF)</a>
-            &nbsp;·&nbsp;
-            <a class="text-link" href="https://youtu.be/w0T6svByJYI" target="_blank" rel="noopener">Demo Video</a>
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- === Music Section (HTML5 playlist) === -->
-    <section id="music" class="section container" style="text-align: center;">
-  <h2>Music</h2>
-  <p class="lead" style="text-align: center; margin: 0 auto 1rem auto;">
-    Click play and listen to my original music & remixes!
+<ul class="inline-info">
+<li>Location: Coquitlam / Vancouver, BC</li>
+<li>Email: <a href="mailto:ela98@sfu.ca">ela98@sfu.ca</a></li>
+<li>GitHub: <a href="https://github.com/skittermonster">skittermonster</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/ethan-lum-052048275//">Ethan Lum</a></li>
+</ul>
+</section>
+<section class="section section-alt" id="education">
+<div class="container">
+<h2>Education</h2>
+<article class="card">
+<header class="card-header">
+<h3>Simon Fraser University — Interactive Arts &amp; Technology</h3>
+<span class="meta">2021-Present</span>
+</header>
+<p>Relevant coursework: Web Development, AI, Human-Computer Interaction, Data Visualization, Programming.</p>
+</article>
+</div>
+</section>
+<section class="section container" id="skills">
+<h2>Skills</h2>
+<div class="pill-list" role="list">
+<span class="pill" role="listitem">HTML5</span>
+<span class="pill" role="listitem">CSS3</span>
+<span class="pill" role="listitem">JavaScript</span>
+<span class="pill" role="listitem">Git &amp; GitHub</span>
+<span class="pill" role="listitem">Figma</span>
+<span class="pill" role="listitem">Python</span>
+</div>
+</section>
+<section class="section container" id="projects">
+<h2>Projects</h2>
+<p class="lead">A few lightweight case studies &amp; experiments — no fluff, just signal.</p>
+<div class="grid">
+<article class="card">
+<header class="card-header">
+<h3>Portfolio Site</h3>
+<span class="meta">HTML · CSS · JS</span>
+</header>
+<p>This website, built as an assignment, uses semantic HTML, responsive CSS, and vanilla JS.</p>
+</article>
+<article class="card">
+<header class="card-header">
+<h3>Data Viz Showcase</h3>
+<span class="meta">SVG · JavaScript</span>
+</header>
+<p>Custom SVG visualizations using JavaScript on the <a class="text-link" href="visualizations.html">visualizations page</a>.</p>
+</article>
+<article class="card">
+<header class="card-header">
+<h3>IAT 460 — LoRAstley</h3>
+<span class="meta">SDXL LoRA · ComfyUI</span>
+</header>
+<p>Custom LoRA trained for SDXL 1.0 to generate 1024×1024 frames in the style of the original “Never Gonna Give You Up” video. Includes training setup, comparisons, challenges, and a demo.</p>
+<p>
+<a class="text-link" href="Ethan Lum 460 slides.pdf" rel="noopener" target="_blank">View Slides (PDF)</a>
+             · 
+            <a class="text-link" href="https://youtu.be/w0T6svByJYI" rel="noopener" target="_blank">Demo Video</a>
+</p>
+</article>
+<article class="card"><header class="card-header"><h3>Interference — 2D Stealth Platformer</h3><span class="meta">Unity · C#</span></header><p>Built a 2D stealth platformer prototype with AI-driven guards, physics-based movement, and multi-level stealth mechanics. Led a 5-person team and coordinated playtests to tune difficulty.</p></article><article class="card"><header class="card-header"><h3>Hidden Gems — Film Recommender</h3><span class="meta">React Native · Firebase · JavaScript</span></header><p>Mobile app that recommends niche films based on user preferences and location. Implemented personalized recommendations and iterated UI/UX with user testing.</p></article><article class="card"><header class="card-header"><h3>New Project — Coming Soon</h3><span class="meta">TBD</span></header><p>Placeholder slot to keep the grid even. Case study and demo coming soon.</p></article></div>
+</section>
+<!-- === Music Section (HTML5 playlist) === -->
+<section class="section container" id="music" style="text-align: center;">
+<h2>Music</h2>
+<p class="lead" style="text-align: center; margin: 0 auto 1rem auto;">
+    Click play and listen to my original music &amp; remixes!
   </p>
-
-  <div class="audio-player" role="region" aria-label="Audio player" style="margin: 0 auto; display: flex; flex-direction: column; align-items: center; max-width: 500px;">
-    <div class="ap-meta">
-      <strong id="ap-title">track1.mp3</strong>
-    </div>
-
-    <div class="ap-controls">
-      <button class="btn" id="ap-prev" aria-label="Previous track">⏮</button>
-      <button class="btn" id="ap-toggle" aria-label="Play/Pause">▶</button>
-      <button class="btn" id="ap-next" aria-label="Next track">⏭</button>
-    </div>
-
-    <input id="ap-seek" type="range" min="0" max="100" value="0" aria-label="Seek" />
-
-    <audio id="ap-audio" preload="metadata">
-      <source src="audio/track1.mp3" type="audio/mpeg" />
+<div aria-label="Audio player" class="audio-player" role="region" style="margin: 0 auto; display: flex; flex-direction: column; align-items: center; max-width: 500px;">
+<div class="ap-meta">
+<strong id="ap-title">track1.mp3</strong>
+</div>
+<div class="ap-controls">
+<button aria-label="Previous track" class="btn" id="ap-prev">⏮</button>
+<button aria-label="Play/Pause" class="btn" id="ap-toggle">▶</button>
+<button aria-label="Next track" class="btn" id="ap-next">⏭</button>
+</div>
+<input aria-label="Seek" id="ap-seek" max="100" min="0" type="range" value="0"/>
+<audio id="ap-audio" preload="metadata">
+<source src="audio/track1.mp3" type="audio/mpeg"/>
       Your browser does not support the audio element.
     </audio>
-
-    <ul class="ap-list" aria-label="Playlist">
-      <li class="ap-track is-active" data-src="audio/track1.mp3">Takedown Remix</li>
-      <li class="ap-track" data-src="audio/track2.mp3">track2.mp3</li>
-      <li class="ap-track" data-src="audio/track3.mp3">track3.mp3</li>
-    </ul>
-  </div>
+<ul aria-label="Playlist" class="ap-list">
+<li class="ap-track is-active" data-src="audio/track1.mp3">Takedown Remix</li>
+<li class="ap-track" data-src="audio/track2.mp3">track2.mp3</li>
+<li class="ap-track" data-src="audio/track3.mp3">track3.mp3</li>
+</ul>
+</div>
 </section>
-
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <h2>Contact</h2>
-        <form id="contact-form" novalidate>
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name" />
-            <span class="error" id="name-error" aria-live="polite"></span>
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" />
-            <span class="error" id="email-error" aria-live="polite"></span>
-          </div>
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Say hello!"></textarea>
-            <span class="error" id="message-error" aria-live="polite"></span>
-          </div>
-          <button class="btn" type="submit">Send</button>
-          <p class="form-success" id="form-success" hidden>Thanks! Your message has been “sent”.</p>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Ethan Lum. Built with HTML, responsive CSS, and vanilla JS.</p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
+<section class="section section-alt" id="contact">
+<div class="container">
+<h2>Contact</h2>
+<form id="contact-form" novalidate="">
+<div class="form-row">
+<label for="name">Name</label>
+<input id="name" name="name" placeholder="Your name" required="" type="text"/>
+<span aria-live="polite" class="error" id="name-error"></span>
+</div>
+<div class="form-row">
+<label for="email">Email</label>
+<input id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+<span aria-live="polite" class="error" id="email-error"></span>
+</div>
+<div class="form-row">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Say hello!" required="" rows="5"></textarea>
+<span aria-live="polite" class="error" id="message-error"></span>
+</div>
+<button class="btn" type="submit">Send</button>
+<p class="form-success" hidden="" id="form-success">Thanks! Your message has been “sent”.</p>
+</form>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="year"></span> Ethan Lum. Built with HTML, responsive CSS, and vanilla JS.</p>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
     (function(){
       if (window.emailjs && emailjs.init) {
         emailjs.init({ publicKey: "NiWKs8UO1KTzQ5rqw" });
       }
     })();
   </script>
-
 </body>
 </html>
