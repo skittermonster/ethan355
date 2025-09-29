@@ -18,6 +18,7 @@
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li> 
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#music">Music</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="visualizations.html">Visualizations</a></li>
         <li><a href="resume.pdf" target="_blank">Resume</a></li> 
@@ -34,7 +35,7 @@
           <div class="hero-cta">
             <a class="btn" href="visualizations.html">See Visualizations</a>
             <a class="btn btn-secondary" href="#contact">Contact Me</a>
-            <a class="btn" href="resume.pdf" target="_blank">View Resume</a> <!-- Added -->
+            <a class="btn" href="resume.pdf" target="_blank">View Resume</a>
           </div>
         </div>
         <div class="hero-photo" aria-hidden="true">
@@ -117,6 +118,37 @@
       </div>
     </section>
 
+    <!-- === Music Section (HTML5 playlist) === -->
+    <section id="music" class="section container" style="text-align: center;">
+      <h2>Music</h2>
+      <p class="lead">Originals & sketches. Click play and explore.</p>
+
+      <div class="audio-player" role="region" aria-label="Audio player">
+        <div class="ap-meta">
+          <strong id="ap-title">track1.mp3</strong>
+        </div>
+
+        <div class="ap-controls">
+          <button class="btn" id="ap-prev" aria-label="Previous track">⏮</button>
+          <button class="btn" id="ap-toggle" aria-label="Play/Pause">▶</button>
+          <button class="btn" id="ap-next" aria-label="Next track">⏭</button>
+        </div>
+
+        <input id="ap-seek" type="range" min="0" max="100" value="0" aria-label="Seek" />
+
+        <audio id="ap-audio" preload="metadata">
+          <source src="audio/track1.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <ul class="ap-list" aria-label="Playlist">
+          <li class="ap-track is-active" data-src="audio/track1.mp3">track1.mp3</li>
+          <li class="ap-track" data-src="audio/track2.mp3">track2.mp3</li>
+          <li class="ap-track" data-src="audio/track3.mp3">track3.mp3</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="section section-alt">
       <div class="container">
         <h2>Contact</h2>
@@ -141,40 +173,8 @@
         </form>
       </div>
     </section>
-  
-<!-- === Music Section (HTML5 playlist) === -->
-<section id="music" class="section container">
-  <h2>Music</h2>
-  <p class="lead">Originals & sketches. Click play and explore.</p>
 
-  <div class="audio-player" role="region" aria-label="Audio player">
-    <div class="ap-meta">
-      <strong id="ap-title">track1.mp3</strong>
-    </div>
-
-    <div class="ap-controls">
-      <button class="btn" id="ap-prev" aria-label="Previous track">⏮</button>
-      <button class="btn" id="ap-toggle" aria-label="Play/Pause">▶</button>
-      <button class="btn" id="ap-next" aria-label="Next track">⏭</button>
-    </div>
-
-    <input id="ap-seek" type="range" min="0" max="100" value="0" aria-label="Seek" />
-
-    <audio id="ap-audio" preload="metadata">
-      <source src="audio/track1.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-
-    
-    <ul class="ap-list" aria-label="Playlist">
-      <li class="ap-track is-active" data-src="audio/track1.mp3">track1.mp3</li>
-      <li class="ap-track" data-src="audio/track2.mp3">track2.mp3</li>
-      <li class="ap-track" data-src="audio/track3.mp3">track3.mp3</li>
-    </ul>
-  </div>
-</section>
-
-</main>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
