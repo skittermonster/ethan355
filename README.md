@@ -54,5 +54,4 @@ A2-Personal-Website/
 
 ## Credits
 
-- Placeholder image from [picsum.photos](https://picsum.photos).
 - Generated on 2025-09-24.
