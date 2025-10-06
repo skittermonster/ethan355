@@ -21,26 +21,6 @@ A2-Personal-Website/
   - A responsive **bar chart** (generated with JS).
   - **Creative SVG art** (spiral circles with animation).
 
-## How to view locally
-
-1. Download this folder or clone your repo.
-2. Open `index.html` in your browser (double-click or drag into a tab).
-3. Navigate to the **Visualizations** page via the top navigation.
-
-## Deploying on GitHub Pages
-
-1. Create a repo named `yourusername.github.io` *or* use any repo and enable **Settings → Pages** with the `main` branch and `/ (root)` folder.
-2. Push these files to the repo:
-   ```bash
-   git init
-   git add .
-   git commit -m "A2: personal website"
-   git branch -M main
-   git remote add origin https://github.com/YOURUSERNAME/YOURREPO.git
-   git push -u origin main
-   ```
-3. Visit `https://yourusername.github.io/` (user site) or `https://yourusername.github.io/YOURREPO/` (project site).
-
 ## Technologies used
 
 - HTML5, CSS3 with responsive units (clamp, vw), and modern layout (Grid/Flex)
