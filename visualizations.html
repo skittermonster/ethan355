@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visualizations — Ethan Lum</title>
+  <title>Video Game Sales Visualizations — Ethan Lum</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <script defer src="vis.js"></script>
 </head>
 <body>
@@ -20,41 +23,137 @@
 
   <main id="content">
     <section class="section container">
-      <h1>Visualization Portfolio</h1>
-      <p class="lead">SVG-first, responsive, and accessible.</p>
-      <p>This page contains two SVG-based works built with JavaScript:</p>
-      <ol>
-        <li><strong>Bar Chart (SVG)</strong> — a simple, responsive data visualization.</li>
-        <li><strong>Creative SVG Art</strong> — generated shapes and animation using JS.</li>
-      </ol>
+      <h1>Video Game Sales Analysis</h1>
+      <p class="lead">Exploring Nintendo-era game sales through Vega-Lite visualizations.</p>
+      <p>
+        The dataset (<code>videogames_wide.csv</code>, 16,598 rows) captures global video game sales by
+        title, platform, genre, publisher, release year, and four regional sales figures (millions of units).
+      </p>
+      <div class="stat-card-grid">
+        <article class="stat-card">
+          <h3>Global Sales Snapshot</h3>
+          <ul>
+            <li><strong>Mean:</strong> 0.54M copies per title</li>
+            <li><strong>Median:</strong> 0.17M (skewed long tail)</li>
+            <li><strong>Mode:</strong> 0.01M (many niche releases)</li>
+            <li><strong>Range:</strong> 0.01–82.74M copies</li>
+            <li><strong>Std Dev:</strong> 1.56M</li>
+          </ul>
+        </article>
+        <article class="stat-card">
+          <h3>Top Contributors</h3>
+          <ul>
+            <li><strong>Genre:</strong> Action (1.75B units)</li>
+            <li><strong>Platform:</strong> PlayStation 2 (1.26B units)</li>
+            <li><strong>Publisher:</strong> Nintendo (1.79B units)</li>
+            <li><strong>Peak Release Year:</strong> 2009</li>
+          </ul>
+        </article>
+        <article class="stat-card">
+          <h3>Regional Averages</h3>
+          <ul>
+            <li><strong>North America:</strong> 0.26M</li>
+            <li><strong>Europe:</strong> 0.15M</li>
+            <li><strong>Japan:</strong> 0.08M</li>
+            <li><strong>Other Regions:</strong> 0.05M</li>
+          </ul>
+        </article>
+      </div>
+      <details class="code-notes">
+        <summary>Variable Types</summary>
+        <dl class="data-dl">
+          <dt>Name</dt><dd>Categorical (string) — individual game titles.</dd>
+          <dt>Platform</dt><dd>Categorical — console or device family.</dd>
+          <dt>Year</dt><dd>Ordinal numeric — release year (1980–2020).</dd>
+          <dt>Genre</dt><dd>Categorical — nine market genres.</dd>
+          <dt>Publisher</dt><dd>Categorical — publishing company.</dd>
+          <dt>NA_Sales, EU_Sales, JP_Sales, Other_Sales</dt><dd>Quantitative — regional units sold (millions).</dd>
+          <dt>Global_Sales</dt><dd>Quantitative — aggregated worldwide units.</dd>
+        </dl>
+      </details>
     </section>
 
     <section class="section section-alt">
       <div class="container">
-        <h2>1) SVG Bar Chart</h2>
-        <div id="viz1" class="viz"></div>
-        <details class="code-notes">
-          <summary>How it works</summary>
-          <p>The chart is created by generating SVG rectangles via JavaScript. It scales responsively by reading the container width and using viewBox.</p>
-        </details>
+        <h2>1. Global Sales by Genre and Platform</h2>
+        <p>
+          I filtered to the eight platforms with the largest lifetime sales and compared them against
+          the nine genres in the dataset. A heatmap makes it easy to spot strong genre–platform pairings.
+        </p>
+        <div class="viz" id="viz-genre-platform" role="img" aria-label="Heatmap showing sum of global game sales by genre and platform"></div>
+        <div class="viz-reflection">
+          <h3>Design Reflection</h3>
+          <p>
+            The rect heatmap emphasizes relative dominance without overwhelming viewers with hundreds of individual titles.
+            Color encoding highlights how <strong>Sports</strong> and <strong>Action</strong> titles drove the PlayStation 2 and Wii,
+            while handheld platforms (DS, PSP) lean into <strong>Role-Playing</strong> and <strong>Puzzle</strong> experiences.
+          </p>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2>2) Creative SVG Art</h2>
-        <div id="viz2" class="viz"></div>
-        <details class="code-notes">
-          <summary>How it works</summary>
-          <p>JS creates circles along a spiral path and animates their radius for a soothing motion effect.</p>
-        </details>
+        <h2>2. Sales Over Time by Platform and Genre</h2>
+        <p>
+          To study momentum, I plotted yearly global sales for the five highest-selling platforms and grouped the view by major genres.
+          Small multiples prevent the lines from overlapping excessively while keeping the roles of platform and genre visible.
+        </p>
+        <div class="viz" id="viz-time-series" role="img" aria-label="Line charts showing global sales over time by platform within genre facets"></div>
+        <div class="viz-reflection">
+          <h3>Design Reflection</h3>
+          <p>
+            The faceted line charts show how <strong>Action</strong> and <strong>Shooter</strong> genres peaked during the Xbox 360
+            and PlayStation 3 era, then faded after 2012. Meanwhile <strong>Role-Playing</strong> games maintain steadier sales on DS and Wii,
+            underscoring Nintendo’s longer-tail support for these genres.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2>3. Regional Sales vs. Platform</h2>
+        <p>
+          Each bar stacks the four recorded regions for a platform, revealing how geography shaped console popularity.
+          Hover tooltips expose absolute values while color encodes region.
+        </p>
+        <div class="viz" id="viz-regional" role="img" aria-label="Stacked bar chart comparing regional sales by platform"></div>
+        <div class="viz-reflection">
+          <h3>Design Reflection</h3>
+          <p>
+            The stacked bars call out that Xbox 360 and PlayStation platforms lean heavily on North America and Europe,
+            while Nintendo handhelds (DS, 3DS, Game Boy Advance) register a much larger share of Japanese sales.
+            This validates the common view that handheld gaming resonates most in Japan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>4. Story: Japan’s Love for Role-Playing Games</h2>
+        <p>
+          After exploring the broad trends, I wanted to quantify which genres rely most on Japan.
+          The scatter plot aggregates each genre’s lifetime global units and the proportion sold in Japan.
+        </p>
+        <div class="viz" id="viz-story" role="img" aria-label="Scatter plot showing Japanese share of global sales by genre"></div>
+        <div class="viz-reflection">
+          <h3>Design Reflection</h3>
+          <p>
+            Positioning genres by total global sales (x-axis) and their Japan share (y-axis) makes the outliers obvious.
+            <strong>Role-Playing</strong> games sell fewer copies globally than <strong>Action</strong>,
+            but almost <strong>38% of their sales come from Japan</strong>, more than double any other major genre.
+            That insight would have been hidden in a simple ranking table.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Ethan Lum — SVG experiments.</p>
+      <p>&copy; <span id="year"></span> Ethan Lum — Data Visualization Studies.</p>
     </div>
   </footer>
 </body>
